@@ -1,4 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
+@import url("./assets/CSS/bootstrap.css");
+@import url("./assets/CSS/bootstrap.min.css");
+@import url("./assets/CSS/bootstrap-grid.css");
+@import url("./assets/CSS/bootstrap-grid.min.css");
+@import url("./assets/CSS/bootstrap-reboot.css");
+@import url("./assets/CSS/bootstrap-reboot.min.css");
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

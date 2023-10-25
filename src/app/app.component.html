@@ -1,1 +1,13 @@
-<router-outlet></router-outlet>
+<!-- Top Nav -->
+<mat-toolbar>
+  <span>Finance App</span>
+</mat-toolbar>
+
+<!-- Side Nav -->
+<mat-sidenav-container id="side-nav" fullscreen>
+  <mat-sidenav mode="side" opened>Sidenav content</mat-sidenav>
+  <mat-sidenav-content>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>
+

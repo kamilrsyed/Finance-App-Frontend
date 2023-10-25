@@ -46,3 +46,4 @@ node_modules
 .gitignore
 .env
 .git
+src/assets/CSS/*
