@@ -47,3 +47,5 @@ node_modules
 .env
 .git
 src/assets/CSS/*
+src/app/environment.ts
+src/app/api-constants.ts

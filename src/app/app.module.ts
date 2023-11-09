@@ -12,10 +12,18 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ReactiveFormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { MatIconModule } from '@angular/material/icon';
+import { AuthInterceptor } from './shared/interceptors/auth.interceptor';
+import { LoggingInterceptor } from './shared/interceptors/logging.interceptor';
+import { SideNavComponent } from './shared/side-nav/side-nav.component';
+import { TopNavComponent } from './shared/top-nav/top-nav.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    SideNavComponent,
+    TopNavComponent
   ],
   imports: [
     BrowserModule,
@@ -26,13 +34,26 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     MatSidenavModule,
     BrowserAnimationsModule,
     ReactiveFormsModule,
+    HttpClientModule,
+    MatIconModule,
     RouterModule.forRoot([
       { path: '', component: LoginComponent },
       { path: 'finances', component: FinancesComponent }
     ]),
-    NgbModule
+    NgbModule,
   ],
-  providers: [],
-  bootstrap: [AppComponent, LoginComponent, FinancesComponent]
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptor,
+      multi: true
+    },
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: LoggingInterceptor,
+      multi: true
+    }
+  ],
+  bootstrap: [AppComponent]
 })
 export class AppModule { }

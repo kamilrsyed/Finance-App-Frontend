@@ -1,0 +1,42 @@
+#side-nav {
+    top: 64px !important;
+}
+
+@media(max-width: 599px) {
+    #side-nav {
+        top: 56px !important;
+    }
+}
+
+.width-12 {
+    width: 12rem;
+}
+
+.sidenav {
+    left: 0;
+    overflow-x: hidden;
+    /* Disable horizontal scroll */
+    padding-top: 20px;
+}
+
+.sidenav a {
+    padding: 6px 8px 6px 16px;
+    text-decoration: none;
+    font-size: 18px;
+    color: #818181;
+    display: block;
+}
+
+.sidenav a:hover {
+    color: #646262;
+}
+
+@media screen and (max-height: 450px) {
+    .sidenav {
+        padding-top: 15px;
+    }
+
+    .sidenav a {
+        font-size: 18px;
+    }
+}

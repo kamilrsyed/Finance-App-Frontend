@@ -1,9 +1,0 @@
-#side-nav {
-    top: 64px !important;
-}
-
-@media(max-width: 599px) {
-    #side-nav {
-        top: 56px !important;
-    }
-}

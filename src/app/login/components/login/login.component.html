@@ -1,24 +1,23 @@
-<mat-card>
-    <mat-card-title>Login</mat-card-title>
-    <mat-card-content>
-        <form [formGroup]="form" (ngSubmit)="submit()">
+<mat-card class="card-wide card-height border-radius">
+    <mat-card-content class="mt-4">
+        <form [formGroup]="loginForm" (ngSubmit)="submit()">
             <p>
-                <mat-form-field>
-                    <mat-label>Username</mat-label>
-                    <input type="text" autofocus matInput formControlName="username">
+                <mat-form-field appearance="outline" class="width-20">
+                    <mat-label>Please enter email</mat-label>
+                    <input type="text" autofocus matInput formControlName="email">
                 </mat-form-field>
             </p>
             <p>
-                <mat-form-field>
-                    <mat-label>Password</mat-label>
+                <mat-form-field [color]="" appearance="outline" class="width-20">
+                    <mat-label>Please enter password</mat-label>
                     <input type="password" matInput formControlName="password">
                 </mat-form-field>
             </p>
             <p *ngIf="error" class="error">
                 {{ error }}
             </p>
-            <div class="button">
-                <button type="submit" mat-button>Login</button>
+            <div class="button justify-content-center align-items-center">
+                <button class="width-20 border border-dark bg-color" type="submit" mat-button>Login</button>
             </div>
         </form>
     </mat-card-content>
